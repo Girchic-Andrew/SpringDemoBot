@@ -6,6 +6,7 @@ import org.springframework.context.annotation.PropertySource;
 
 import lombok.Data;
 
+
 @Configuration
 @Data
 @PropertySource("application.properties")

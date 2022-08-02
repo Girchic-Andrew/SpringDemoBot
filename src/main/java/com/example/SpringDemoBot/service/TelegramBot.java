@@ -8,6 +8,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import com.example.SpringDemoBot.config.BotConfig;
 
+//@Slf4j
 @Component
 public class TelegramBot extends TelegramLongPollingBot {
 
@@ -56,6 +57,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 	private void startCommandReceived(long chatId, String name) {
 		String answer = "Hi, " + name + " nice to meet you!";
 		sendMessage(chatId, answer);
+//		log.info("Replied to user " + name);
 	}
 
 	private void sendMessage(long chatId, String textToSend) {
@@ -66,7 +68,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 		try {
 			execute(message);
 		} catch (TelegramApiException e) {
-
+//			log.error("Error occurred: " + e.getMessage());
 		}
 	}
 
