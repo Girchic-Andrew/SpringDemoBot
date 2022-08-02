@@ -1,4 +1,4 @@
-package config;
+package com.example.SpringDemoBot.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -10,16 +10,11 @@ import lombok.Data;
 @Data
 @PropertySource("application.properties")
 public class BotConfig {
-	
+
 	@Value("${bot.name}")
 	String botName;
-	
+
 	@Value("${bot.token}")
 	String token;
-	
-	/*
-	 * public String getToken() { return token; } public String getBotName() {
-	 * return botName; }
-	 */	
-}
 
+}
