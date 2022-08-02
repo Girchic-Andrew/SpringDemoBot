@@ -46,7 +46,8 @@ public class TelegramBot extends TelegramLongPollingBot {
 				sendMessage(chatId, HELP_TEXT);
 				break;
 			default:
-				sendMessage(chatId, "Sorry, command wasn't recognized...");
+				sendMessage(chatId, "Sorry, command wasn't recognized...\n"
+						+ "You have said: " + update.getMessage().getText());
 			}
 
 		}
