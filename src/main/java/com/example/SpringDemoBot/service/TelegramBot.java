@@ -40,7 +40,7 @@ public class TelegramBot extends TelegramLongPollingBot {
 			long chatId = update.getMessage().getChatId();
 			switch (messageText) {
 			case "/start":
-				startCommandReceived(chatId, update.getMessage().getChat().getUserName());
+				startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
 				break;
 			case "/help":
 				sendMessage(chatId, HELP_TEXT);
