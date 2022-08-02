@@ -34,18 +34,18 @@ public class TelegramBot extends TelegramLongPollingBot{
 			long chatId = update.getMessage().getChatId();
 			switch(messageText) {
 				case "/start":
-					startCommandReceived(chatId, update.getMessage().getChat().getFirstName());
+					startCommandReceived(chatId, update.getMessage().getChat().getUserName());
 					break;
 				
 				default: sendMessage(chatId, "Sorry, command wasn't recognized...");
-					
+					break;
 			}
 			
 		}
 	}
 	
-	private void startCommandReceived(long chatId, String firstName) {
-		String answer = "Hi, " + firstName + " nice to meet you!";
+	private void startCommandReceived(long chatId, String name) {
+		String answer = "Hi, " + name + " nice to meet you!";
 		sendMessage(chatId, answer);
 	}
 
